@@ -131,6 +131,7 @@ dmypy.json
 # local
 settings.sql
 .vscode/
+media/
 
 # General MacOS files to ignore
 .DS_Store

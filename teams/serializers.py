@@ -3,12 +3,14 @@ from .models import Team, Member
 
 
 class TeamSerializer(serializers.ModelSerializer):
+    # admin = serializers.CharField(source='admin.email', read_only=True)
     admin = serializers.ReadOnlyField(source='admin.email')
 
     class Meta:
         model = Team
         fields = ['id', 'name', 'blurb', 'hero_image', 'admin',
                   'custom_prompt', 'collab_prompt', 'required_fields', 'link', 'members', ]
+        read_only_fields = ['members']
 
 
 class MemberSerializer(serializers.ModelSerializer):
