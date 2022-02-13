@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.forms import IntegerField
 from users.models import User
 
 
@@ -40,4 +41,4 @@ class Member(models.Model):
         pets = models.CharField(max_length=100, blank=True)
         custom_answer = models.CharField(max_length=280, blank=True)
         collab_answer = models.CharField(max_length=280, blank=True)
-        reactions_count =
+        reactions_count = models.IntegerField(default=0)
