@@ -4,13 +4,13 @@ from django.conf import settings
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
-    blurb = models.CharField(max_length=280)
+    blurb = models.CharField(max_length=280, blank=True)
     hero_image = models.ImageField(upload_to='team_image/', blank=True)
     admin = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='teams')
-    custom_prompt = models.CharField(max_length=150)
-    collab_prompt = models.CharField(max_length=150)
-    required_fields = models.CharField(max_length=100)
+    custom_prompt = models.CharField(max_length=150, blank=True)
+    collab_prompt = models.CharField(max_length=150, blank=True)
+    required_fields = models.CharField(max_length=100, blank=True)
     link = models.CharField(max_length=150, blank=True)
 
     def __str__(self):
