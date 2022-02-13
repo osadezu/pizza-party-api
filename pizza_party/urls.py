@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# For image uploads
 
+# For image uploads
 from django.conf import settings
 from django.conf.urls.static import static
 

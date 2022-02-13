@@ -164,3 +164,10 @@ DJOSER = {
         'user': 'users.serializers.UserCreateSerializer'
     }
 }
+
+# Django-storages + boto3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'pizza-party-teams'
+AWS_DEFAULT_ACL = 'public-read'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
