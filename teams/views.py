@@ -1,5 +1,5 @@
 from rest_framework import generics
-from .serializers import TeamSerializer, MemberSerializer
+from .serializers import TeamSerializer, TeamDetailSerializer, MemberSerializer
 from .models import Team, Member
 
 # Custom permissions
@@ -17,7 +17,7 @@ class TeamList(generics.ListCreateAPIView):
 
 class TeamDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Team.objects.all()
-    serializer_class = TeamSerializer
+    serializer_class = TeamDetailSerializer
     permission_classes = [IsOwnerOrReadOnly]
 
 
